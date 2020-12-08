@@ -6,7 +6,7 @@ const file = readFile(__dirname + '/TobogganTrajectoryInput.txt', 'utf-8')
 
 let map = []
 
-file.forEach(ele => (map.push(ele + ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ele + ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele + ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele + ele + ele + ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele)));
+file.forEach(ele => (map.push(ele + ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele + ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ele + ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele + ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele + ele + ele + ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele+ ele)));
 
 let slope1treesCounter = 0
 let slope2treesCounter = 0
@@ -14,10 +14,10 @@ let slope3treesCounter = 0
 let slope4treesCounter = 0
 let slope5treesCounter = 0
 
-let rightMove2 = 0
-let rightMove3 = 0
-let rightMove4 = 0
-let rightMove5 = 0
+let rightMove2 = 3
+let rightMove3 = 5
+let rightMove4 = 7
+let rightMove5 = 2
 
 
 //Slope 1
@@ -27,9 +27,8 @@ for(i=0; i < map.length; i++){
     }
 }
 
-
 //Slope 2
-for(i=0; i< map.length; i++){
+for(i=1; i< map.length; i++){
     if(map[i][rightMove2] === "#"){
         slope2treesCounter++
     }
@@ -37,7 +36,7 @@ for(i=0; i< map.length; i++){
 }
 
 //Slope 3
-for(i=0; i< map.length; i++){
+for(i=1; i< map.length; i++){
     if(map[i][rightMove3] === "#"){
         slope3treesCounter++
     }
@@ -45,7 +44,7 @@ for(i=0; i< map.length; i++){
 }
 
 //Slope 4
-for(i=0; i< map.length; i++){
+for(i=1; i< map.length; i++){
     if(map[i][rightMove4] === "#"){
         slope4treesCounter++
     }
@@ -53,19 +52,17 @@ for(i=0; i< map.length; i++){
 }
 
 //Slope 5
-for(i=0; rightMove5 <= map.length; i++){
+for(i=1; rightMove5 < map.length; i++){
     if(map[rightMove5][i] === "#"){
         slope5treesCounter++
     }
     rightMove5 = rightMove5 + 2
 }
 
-console.log(slope1treesCounter)
-console.log(slope2treesCounter)
-console.log(slope3treesCounter)
-console.log(slope4treesCounter)
-console.log(slope5treesCounter)
 
+let total = slope1treesCounter * slope2treesCounter * slope3treesCounter *slope4treesCounter *slope5treesCounter
+
+console.log("total = " + total)
 
 
 
